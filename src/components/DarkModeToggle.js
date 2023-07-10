@@ -1,3 +1,5 @@
+"use client";
+
 import { useRecoilState } from "recoil";
 import { Switch } from "@mui/material";
 import { darkState } from "../store/atom";
@@ -7,7 +9,8 @@ function DarkModeToggle() {
   const handleChange = (event) => {
     setIsDark(event.target.checked);
   };
-  localStorage.setItem("darkMode", isDark.toString());
+  //   localStorage.setItem("darkMode", isDark.toString());
+
   return <Switch checked={isDark} onChange={handleChange} />;
 }
 
