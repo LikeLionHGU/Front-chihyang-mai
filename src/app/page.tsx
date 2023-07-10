@@ -3,6 +3,13 @@ import styles from "./page.module.css";
 import { RecoilRoot } from "recoil";
 
 export default function Home() {
+  // const posts = [
+  //   {
+  //     id: "skamdak",
+  //     name: "dsnakd",
+  //   },
+  // ]
+
   return (
     <main className={styles.main}>
       <div style={{ color: "primary.main" }}>test</div>

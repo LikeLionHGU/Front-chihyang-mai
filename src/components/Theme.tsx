@@ -2,11 +2,8 @@
 
 import ThemeProvider from "@/theme";
 import { ReactNode } from "react";
+import { RecoilRoot } from "recoil";
 
-type Props = {
-  children: ReactNode;
-};
-
-export default function Recoil({ children }: Props) {
+export default function Theme({ children }: any) {
   return <ThemeProvider>{children}</ThemeProvider>;
 }
