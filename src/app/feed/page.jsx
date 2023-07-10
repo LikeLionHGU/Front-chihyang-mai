@@ -2,7 +2,7 @@ export default function Page(){
 
     return(
         <div>
-            test
+            test1234
         </div>
     )
 }
