@@ -8,6 +8,7 @@ import ReactQuery from "@/components/ReactQuery";
 import Recoil from "@/components/Recoil";
 import { Box, Button } from "@mui/material";
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
             <body>
               <Header />
               {children}
+              <Footer />
             </body>
             {/* </Box> */}
           </Theme>
