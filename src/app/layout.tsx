@@ -7,7 +7,7 @@ import Theme from "@/components/Theme";
 import ReactQuery from "@/components/ReactQuery";
 import Recoil from "@/components/Recoil";
 import { Box, Button } from "@mui/material";
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
