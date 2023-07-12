@@ -10,13 +10,6 @@ import FeedBlock from "@/components/FeedBlock";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  // const posts = [
-  //   {
-  //     id: "skamdak",
-  //     name: "dsnakd",
-  //   },
-  // ]
-
   const feeds = FeedExamples;
   const fundings = FundingExamples;
 
@@ -67,8 +60,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      실시간 펀딩랭킹 가장 핫한 펀딩을 만나보세요! 추천 펀딩 내 취미에 맞는 펀딩
-      목록을 추천해줘요!
+      <div></div>
     </div>
   );
 }

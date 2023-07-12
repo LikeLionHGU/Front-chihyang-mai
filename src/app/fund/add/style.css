@@ -1,0 +1,5 @@
+input:focus {
+  outline: none;
+  border-width: 5px;
+  border-radius: 5px;
+}
