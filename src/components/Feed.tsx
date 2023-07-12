@@ -1,9 +1,11 @@
+import { userState } from "@/store/atom";
 import PersonInfo from "./PersonInfo";
+import { useRecoilValue } from "recoil";
 
 type Props = {
   content: string;
   likes: number;
-  name: string;
+  name?: string;
 };
 
 export default function Feed({ content, likes, name }: Props) {
@@ -17,7 +19,7 @@ export default function Feed({ content, likes, name }: Props) {
       <div className="h-[180px] rounded-md bg-gray-300" />
       <div className="flex items-center justify-between">
         <PersonInfo name={name} />
-        // heart
+
         <div className="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"

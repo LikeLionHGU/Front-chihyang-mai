@@ -7,7 +7,7 @@ export default function FundPage() {
   const fundings = FundingExamples;
   return (
     <div className="bg-white flex flex-col gap-[50px]">
-      <div className="w-[100%] border h-[400px] bg-gray-200" />
+      <div className="w-[100%] border h-[300px] bg-gray-200" />
       <div className="px-[100px] flex flex-col gap-[50px]">
         <div>
           <Title

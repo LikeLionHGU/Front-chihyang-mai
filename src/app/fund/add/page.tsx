@@ -47,8 +47,8 @@ export default function FundAddPage() {
   };
   const { handleSubmit, control, setValue, getValues } = useForm<IFormData>({
     defaultValues: {
-      title: "ddd",
-      content: "dd",
+      title: "",
+      content: "",
       tag: null,
       influencer: [],
       image_urls: [],
