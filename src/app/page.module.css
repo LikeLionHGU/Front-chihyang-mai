@@ -97,7 +97,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -226,4 +226,11 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+.input:focus {
+  outline: none;
+  border-width: 2px;
+  /* box-shadow: 0 0 px darkred; */
+  border-radius: 5px; /* 적절한 값을 사용해 조정할 수 있습니다. */
 }

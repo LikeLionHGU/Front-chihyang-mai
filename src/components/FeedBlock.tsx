@@ -1,4 +1,4 @@
-export default function FeedBlock({ title, request_num, index }) {
+export default function FeedBlock({ title, request_num, index }: any) {
   return (
     <div className="flex border rounded-md border-container1 text-black">
       <div className="bg-gray-200 w-[100px] h-[70px]"></div>

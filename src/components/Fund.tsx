@@ -17,7 +17,7 @@ export default function Fund({ content, request_num, name }: Props) {
       <div className="h-[180px] rounded-md bg-gray-300" />
       <div className="flex items-center justify-between">
         <PersonInfo name={name} />
-        // heart
+
         <div className="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -26,16 +26,16 @@ export default function RootLayout({
     <html lang="en">
       <ReactQuery>
         <Recoil>
-          <Theme>
-            {/* <Box sx={{ minWidth: "1920px" }}> */}
+          {/* <Theme> */}
+          {/* <Box sx={{ minWidth: "1920px" }}> */}
 
-            <body>
-              <Header />
-              {children}
-              <Footer />
-            </body>
-            {/* </Box> */}
-          </Theme>
+          <body>
+            <Header />
+            {children}
+            <Footer />
+          </body>
+          {/* </Box> */}
+          {/* </Theme> */}
         </Recoil>
       </ReactQuery>
     </html>

@@ -17,7 +17,7 @@ export default function Header() {
           height={40}
           alt="headerLogo"
         />
-        <HeaderButton text={"Home"} />
+        <HeaderButton text={"HOME"} />
         <HeaderButton text={"FEED"} />
         <HeaderButton text={"FUNDING"} />
         <HeaderButton text={"MY"} />
@@ -25,11 +25,15 @@ export default function Header() {
       <div className="flex items-center bg-inherit">
         <SearchBar />
         <div className="w-[30px]"></div>
-        <PersonInfo />
-        <div className="w-[30px]"></div>
-        <FunctionButton text={"피드 추가하기"} link="/" />
 
-        <FunctionButton text={"펀딩 요청하기"} link="/" />
+        <Link href="/profile">
+          <PersonInfo />
+        </Link>
+        <div className="w-[30px]"></div>
+
+        <FunctionButton text={"피드 추가하기"} link="/feed/add" />
+
+        <FunctionButton text={"펀딩 요청하기"} link="/fund/add" />
 
         <DarkModeToggle />
       </div>

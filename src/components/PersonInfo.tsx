@@ -3,6 +3,7 @@
 import { userState } from "@/store/atom";
 import { Avatar, Box, Typography } from "@mui/material";
 import { useRecoilValue } from "recoil";
+import { usePathname } from "next/navigation";
 
 type Props = {
   name?: string;
@@ -10,6 +11,14 @@ type Props = {
 
 export default function PersonInfo({ name }: Props) {
   const user = useRecoilValue(userState);
+
+  const pathname = usePathname();
+
+  const convertName = (name: string) => {
+    if (pathname === "/profile") return user.name;
+    else if (name) return name;
+    return user.name;
+  };
 
   return (
     <Box sx={{ display: "flex", alignItems: "center", mx: "0px" }}>
@@ -23,7 +32,8 @@ export default function PersonInfo({ name }: Props) {
           fontSize: "14px",
         }}
       >
-        {name ? name : user.name} <span style={{ fontWeight: "400" }}>님</span>
+        {convertName(name as string)}{" "}
+        <span style={{ fontWeight: "400" }}>님</span>
       </Typography>
     </Box>
   );
