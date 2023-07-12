@@ -1,6 +1,9 @@
-import { userState } from "@/store/atom";
+"use client";
+
+import { feedModalState, userState } from "@/store/atom";
 import PersonInfo from "./PersonInfo";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { motion } from "framer-motion";
 
 type Props = {
   content: string;
@@ -14,8 +17,13 @@ export default function Feed({ content, likes, name }: Props) {
     return content;
   };
 
+  const setFeedMadal = useSetRecoilState(feedModalState);
+
   return (
-    <div className="flex flex-col gap-[10px]">
+    <motion.div
+      className="flex flex-col gap-[10px]"
+      onClick={() => setFeedMadal(true)}
+    >
       <div className="h-[180px] rounded-md bg-gray-300" />
       <div className="flex items-center justify-between">
         <PersonInfo name={name} />
@@ -32,6 +40,6 @@ export default function Feed({ content, likes, name }: Props) {
         </div>
       </div>
       <div className="text-black font-bold">{summaryContent(content)}</div>
-    </div>
+    </motion.div>
   );
 }

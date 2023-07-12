@@ -12,3 +12,8 @@ export const userState = atom({
     name: "나는 그림 초보입니다",
   },
 });
+
+export const feedModalState = atom({
+  key: "feedModal",
+  default: false,
+});
