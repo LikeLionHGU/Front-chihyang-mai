@@ -1,6 +1,7 @@
 import Fund from "@/components/Fund";
 import Title from "@/components/Home/Title";
 import { FundingExamples } from "@/components/data";
+import Link from "next/link";
 
 export default function FundPage() {
   const fundings = FundingExamples;
@@ -15,12 +16,20 @@ export default function FundPage() {
           />
           <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
             {fundings.slice(0, 10).map((funding) => (
-              <Fund
-                key={funding.id}
-                content={funding.content}
-                request_num={funding.request_num}
-                name={funding.writer_name}
-              />
+              <Link
+                href={{
+                  pathname: `/fund/${funding.id}`,
+                  query: funding,
+                }}
+                as={`/fund/${funding.id}`}
+              >
+                <Fund
+                  key={funding.id}
+                  content={funding.content}
+                  request_num={funding.request_num}
+                  name={funding.writer_name}
+                />
+              </Link>
             ))}
           </div>
         </div>

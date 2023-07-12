@@ -23,6 +23,8 @@ import TextareaDecorators from "@/components/FundAdd/TextareaDecorator";
 import Influencer from "@/components/FundAdd/Influencer";
 import Content from "@/components/FundAdd/Content";
 
+// import UploadImage from "@/components/UploadImage";
+
 interface IFormData {
   title: string;
   content: string;
@@ -43,7 +45,7 @@ export default function FundAddPage() {
 
     console.log(newFunding);
   };
-  const { handleSubmit, control } = useForm<IFormData>({
+  const { handleSubmit, control, setValue, getValues } = useForm<IFormData>({
     defaultValues: {
       title: "ddd",
       content: "dd",
@@ -59,7 +61,9 @@ export default function FundAddPage() {
         image_url="/static/images/avatar/1.jpg"
       />
       <div className="flex gap-[30px]">
-        <div className="w-[55%] h-[480px] bg-gray-100"></div>
+        <div className="w-[55%] h-[480px] bg-gray-100 flex items-center justify-center">
+          {/* <UploadImage setValue={setValue} getValues={getValues} /> */}
+        </div>
         <div className="flex flex-col items-start w-[45%] justify-between gap-[20px]">
           <Controller
             name={"title"}
