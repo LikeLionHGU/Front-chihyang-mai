@@ -1,12 +1,19 @@
+"use client";
+
 import Title from "@/components/Home/Title";
 import Feed from "@/components/Feed";
 import { FeedExamples, FundingExamples } from "@/components/data";
 import FeedBlock from "@/components/FeedBlock";
 import Link from "next/link";
+import { getFeed } from "@/apis/feed";
+import { useEffect } from "react";
 
 export default function Home() {
   const feeds = FeedExamples;
   const fundings = FundingExamples;
+
+  //feed가져오기
+  getFeed().then((res) => console.log(res));
 
   return (
     <div className="bg-white flex flex-col gap-[50px]">
