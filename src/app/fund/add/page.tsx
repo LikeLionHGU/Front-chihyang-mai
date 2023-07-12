@@ -17,51 +17,72 @@ import styles from "../../page.module.css";
 import React, { useState } from "react";
 import MultipleSelect from "@/components/FundAdd/Select";
 import Asynchronous from "@/components/FundAdd/Select";
+import { useForm, Controller } from "react-hook-form";
 
 import TextareaDecorators from "@/components/FundAdd/TextareaDecorator";
+import Influencer from "@/components/FundAdd/Influencer";
+import Content from "@/components/FundAdd/Content";
+
+interface IFormData {
+  title: string;
+  content: string;
+  tag: string | null;
+  influencer: string[];
+  image_urls: string[];
+}
 
 export default function FundAddPage() {
-  const [script, setScript] = useState("");
+  const onValid = (formData: IFormData) => {
+    const newFunding = {
+      title: formData.title,
+      content: formData.content,
+      tag: formData.tag,
+      influencer: formData.influencer[0],
+      image_urls: formData.image_urls,
+    };
 
-  const [personName, setPersonName] = React.useState<string[]>([]);
-
-  const handleChange = (event: SelectChangeEvent<typeof personName>) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+    console.log(newFunding);
   };
+  const { handleSubmit, control } = useForm<IFormData>({
+    defaultValues: {
+      title: "ddd",
+      content: "dd",
+      tag: null,
+      influencer: [],
+      image_urls: [],
+    },
+  });
   return (
     <div className="px-[100px] py-[50px]">
-      <PersonInfo image_url="/static/images/avatar/1.jpg" />
+      <PersonInfo
+        title="펀딩 요청하기 작성 페이지"
+        image_url="/static/images/avatar/1.jpg"
+      />
       <div className="flex gap-[30px]">
         <div className="w-[55%] h-[480px] bg-gray-100"></div>
         <div className="flex flex-col items-start w-[45%] justify-between gap-[20px]">
-          <input
-            type="text"
-            className={`${styles.input} w-[100%] border border-red-700 py-[10px] rounded-md px-[10px] text-[20px]`}
-            placeholder="요청할 펀딩 제목을 입력하세요."
+          <Controller
+            name={"title"}
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                sx={{ width: "100%", fontSize: "30px" }}
+                color="error"
+                placeholder="요청할 펀딩 제목을 입력하세요."
+              />
+            )}
           />
-          <Asynchronous />
-          <TextField
-            // className={`bg-container1`}
+          <Asynchronous control={control} />
+          <Influencer control={control} />
+          <Content control={control} />
+
+          <Button
+            onClick={handleSubmit(onValid)}
             color="error"
-            placeholder="펀딩 요청 대상"
-          />
-          <TextField
-            color="error"
-            sx={{ width: "100%" }}
-            id="outlined-multiline-static"
-            label="펀딩 내용"
-            multiline
-            rows={7}
-            defaultValue="요청할 펀딩에 대한 내용을 여기에 입력하세요."
-          />
-          {/* <TextareaDecorators /> */}
-          <Button color="error" className="bg-sub1" variant="contained">
+            className="bg-sub1"
+            variant="contained"
+          >
             펀딩 요청 업로드
           </Button>
         </div>

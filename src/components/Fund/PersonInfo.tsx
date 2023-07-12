@@ -5,11 +5,12 @@ import { Avatar, Box, Typography } from "@mui/material";
 import { useRecoilValue } from "recoil";
 
 type Props = {
+  title: string;
   image_url?: string;
   name?: string;
 };
 
-export default function PersonInfo({ image_url, name }: Props) {
+export default function PersonInfo({ image_url, name, title }: Props) {
   const userName = useRecoilValue(userState);
 
   const nameConverter = (name: string) => {
@@ -20,7 +21,7 @@ export default function PersonInfo({ image_url, name }: Props) {
   return (
     <>
       <Typography sx={{ fontSize: "35px", fontWeight: "bold" }}>
-        요청중인 펀딩
+        {title}
       </Typography>
       <Box sx={{ display: "flex", alignItems: "center", mx: "0px" }}>
         <Avatar alt="Remy Sharp" src={`${image_url}`} />

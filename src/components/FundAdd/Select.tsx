@@ -2,6 +2,7 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import CircularProgress from "@mui/material/CircularProgress";
+import { Controller, Control } from "react-hook-form";
 
 interface Film {
   title: string;
@@ -14,7 +15,11 @@ function sleep(delay = 0) {
   });
 }
 
-export default function Asynchronous() {
+type Props = {
+  control: any;
+};
+
+export default function Asynchronous({ control }: Props) {
   const [open, setOpen] = React.useState(false);
   const [options, setOptions] = React.useState<readonly Film[]>([]);
   const loading = open && options.length === 0;
@@ -46,40 +51,51 @@ export default function Asynchronous() {
   }, [open]);
 
   return (
-    <Autocomplete
-      id="asynchronous-demo"
-      sx={{ py: "-10px" }}
-      open={open}
-      onOpen={() => {
-        setOpen(true);
-      }}
-      onClose={() => {
-        setOpen(false);
-      }}
-      isOptionEqualToValue={(option, value) => option.title === value.title}
-      getOptionLabel={(option) => option.title}
-      options={options}
-      loading={loading}
-      renderInput={(params) => (
-        <TextField
-          color="error"
-          sx={{
-            width: "150px",
-            borderRadius: "10px",
+    <Controller
+      name="tag"
+      control={control}
+      render={({ field: { onChange, value } }) => (
+        <Autocomplete
+          value={value}
+          onChange={(e, newValue) => {
+            onChange(newValue);
           }}
-          {...params}
-          label="카테고리"
-          InputProps={{
-            ...params.InputProps,
-            endAdornment: (
-              <React.Fragment>
-                {loading ? (
-                  <CircularProgress color="inherit" size={20} />
-                ) : null}
-                {params.InputProps.endAdornment}
-              </React.Fragment>
-            ),
+          id="asynchronous-demo"
+          sx={{ py: "-10px" }}
+          isOptionEqualToValue={(option: any, value) =>
+            option.title === value.title
+          }
+          getOptionLabel={(option) => option.title}
+          options={options}
+          loading={loading}
+          onOpen={() => {
+            setOpen(true);
           }}
+          onClose={() => {
+            setOpen(false);
+          }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              color="error"
+              sx={{
+                width: "150px",
+                borderRadius: "10px",
+              }}
+              label="카테고리"
+              InputProps={{
+                ...params.InputProps,
+                endAdornment: (
+                  <React.Fragment>
+                    {loading ? (
+                      <CircularProgress color="inherit" size={20} />
+                    ) : null}
+                    {params.InputProps.endAdornment}
+                  </React.Fragment>
+                ),
+              }}
+            />
+          )}
         />
       )}
     />
