@@ -47,9 +47,12 @@ export default function FeedPage() {
             </Link>
           </div>
           <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
-            {feeds?.slice(0, 15).map((feed: any) => (
-              <Feed key={feed?.id} feed={feed} />
-            ))}
+            {feeds
+              ?.reverse()
+              ?.slice(0, 15)
+              .map((feed: any) => (
+                <Feed key={feed?.id} feed={feed} />
+              ))}
           </div>
           <div className="h-[100px]"> </div>
         </div>

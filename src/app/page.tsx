@@ -35,9 +35,12 @@ export default function Home() {
           subTitle="현재 인기 있는 피드를 살펴보세요."
         />
         <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
-          {feeds.slice(0, 5).map((feed) => (
-            <Feed key={feed?.id} feed={feed} />
-          ))}
+          {feeds
+            .reverse()
+            .slice(0, 5)
+            .map((feed) => (
+              <Feed key={feed?.id} feed={feed} />
+            ))}
         </div>
       </div>
       <div className="flex gap-[40px] px-[100px]">

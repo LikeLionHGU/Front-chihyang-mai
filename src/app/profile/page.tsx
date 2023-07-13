@@ -18,7 +18,7 @@ import { getFunding } from "@/apis/funding";
 
 export default function Profile() {
   // const feeds = FeedExamples;
-  // const fundings = FundingExamples;
+  const raiseFundings = FundingExamples;
   const [feeds, setFeeds] = useState<IFeed[] | []>([]);
   const [fundings, setFundings] = useState<IFunding[] | []>([]);
 
@@ -68,7 +68,7 @@ export default function Profile() {
             title="내가 모금한 펀딩"
             subTitle="자신이 모금한 펀딩의 현황을 살펴보세요"
           />
-          {fundings?.slice(0, 5)?.map((funding, index) => (
+          {raiseFundings?.slice(0, 5)?.map((funding, index) => (
             <FeedBlock funding={funding} index={index + 1} />
           ))}
         </div>

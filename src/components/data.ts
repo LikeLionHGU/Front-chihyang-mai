@@ -95,143 +95,143 @@ export const FeedExamples = [
 export const FundingExamples = [
   {
     id: 1,
-    writer_name: "김철수",
+    writer_name: { id: 21, name: "김철수" },
     title: "음악 앨범 제작 펀딩",
     content: `안녕하세요, 저는 음악가로서 첫 번째 앨범을 제작하고자 하는 김철수입니다. 이 앨범은 내 진솔한 이야기와 감성적인 멜로디로 가득한 음악을 담고 있을 것입니다. 많은 사람들에게 나의 음악을 전할 수 있도록 펀딩을 시작하려고 합니다.
   
       이 펀딩은 앨범 제작과 관련된 비용을 마련하기 위해 시작되었습니다. 녹음 스튜디오 비용, 음악 프로듀서 고용, 음원 마스터링 등에 사용될 예정입니다. 저의 음악에 관심이 있으신 분들의 많은 참여를 부탁드립니다.`,
     tag: "음악",
-    request_num: 100,
+    requested_num: 100,
     created_time: "2022-01-01",
     finished_time: "2022-02-28",
     influencer: "김철수",
-    image_urls: ["/img/image1.png"],
+    image_urls: [{ image_url: "/img/image1.png" }],
   },
   {
     id: 2,
-    writer_name: "이영희",
+    writer_name: { id: 22, name: "이영희" },
     title: "지구를 위한 친환경 제품 개발 펀딩",
     content: `안녕하세요, 저는 지구를 보호하고자 친환경 제품을 개발하려는 이영희입니다. 현재 많은 환경 오염 문제가 발생하고 있어서 이를 해결하기 위한 친환경 제품 개발에 힘쓰고 있습니다.
   
       이 펀딩은 친환경 제품 개발과 관련된 비용을 마련하기 위해 시작되었습니다. 연구 및 개발 비용, 재료 구매, 생산 설비 구축 등에 사용될 예정입니다. 지구를 함께 지키기 위해 많은 분들의 관심과 참여를 부탁드립니다.`,
     tag: "환경보호",
-    request_num: 50,
+    requested_num: 50,
     created_time: "2022-01-02",
     finished_time: "2022-03-31",
     influencer: "이영희",
-    image_urls: ["/img/image2.png"],
+    image_urls: [{ image_url: "/img/image2.png" }],
   },
   {
     id: 3,
-    writer_name: "박영수",
+    writer_name: { id: 23, name: "박영수" },
     title: "농촌 체험 프로그램 개설 펀딩",
     content: `안녕하세요, 저는 도시 생활에 지친 사람들을 위해 농촌 체험 프로그램을 개설하고자 하는 박영수입니다. 도시와는 다른 자연의 아름다움과 농업 경험을 통해 사람들에게 소중한 경험을 제공하고자 합니다.
   
       이 펀딩은 농촌 체험 프로그램 개설을 위해 필요한 예산을 마련하기 위해 시작되었습니다. 농장 임대비, 체험 활동 준비물 구입, 인력 고용 등에 사용될 예정입니다. 도시 생활에 지친 분들에게 새로운 경험을 제공하기 위해 많은 관심과 참여 부탁드립니다.`,
     tag: "여가",
-    request_num: 30,
+    requested_num: 30,
     created_time: "2022-01-03",
     finished_time: "2022-04-30",
     influencer: "박영수",
-    image_urls: ["/img/image3.png"],
+    image_urls: [{ image_url: "/img/image3.png" }],
   },
   {
     id: 4,
-    writer_name: "정민지",
+    writer_name: { id: 24, name: "정민지" },
     title: "동물 보호소 지원 펀딩",
     content: `안녕하세요, 저희는 유기 동물들을 보호하고 새로운 가족을 찾아주는 보호소를 운영하고 있습니다. 유기 동물들은 많은 도움이 필요한 상황이기 때문에 보호소 운영을 위한 지원이 중요합니다.
   
       이 펀딩은 보호소 운영을 위해 필요한 경비를 마련하기 위해 시작되었습니다. 동물 사료 구매, 의료 비용, 보호소 시설 유지 보수 등에 사용될 예정입니다. 유기 동물들에게 새로운 기회를 제공하기 위해 많은 관심과 참여를 부탁드립니다.`,
     tag: "사회복지",
-    request_num: 20,
+    requested_num: 20,
     created_time: "2022-01-04",
     finished_time: "2022-05-31",
     influencer: "정민지",
-    image_urls: ["/img/image4.png"],
+    image_urls: [{ image_url: "/img/image4.png" }],
   },
   {
     id: 5,
-    writer_name: "이준호",
+    writer_name: { id: 25, name: "이준호" },
     title: "영화 제작 프로젝트 펀딩",
     content: `안녕하세요, 저희는 독립 영화를 제작하기 위한 펀딩을 시작하려고 합니다. 이 영화는 일상에서 놓치기 쉬운 감동과 이야기를 담고 있으며, 작은 사람들의 이야기를 통해 사회적인 문제를 다룹니다.
   
       이 펀딩은 영화 제작을 위해 필요한 예산을 마련하기 위해 시작되었습니다. 촬영 장비 대여, 스태프 비용, 포스터 및 홍보 자료 제작 등에 사용될 예정입니다. 작은 이야기로 큰 감동을 전할 수 있도록 많은 관심과 참여를 부탁드립니다.`,
     tag: "영화",
-    request_num: 50,
+    requested_num: 50,
     created_time: "2022-01-05",
     finished_time: "2022-06-30",
     influencer: "이준호",
-    image_urls: ["/img/image5.png"],
+    image_urls: [{ image_url: "/img/image5.png" }],
   },
   {
     id: 6,
-    writer_name: "김지현",
+    writer_name: { id: 26, name: "김지현" },
     title: "장애인 스포츠 지원 펀딩",
     content: `안녕하세요, 저희는 장애인들이 다양한 스포츠 활동을 할 수 있도록 지원하는 프로그램을 운영하고 있습니다. 스포츠는 모두가 참여할 수 있는 활동이어야 하기 때문에 장애인들의 권리를 지키기 위해 노력하고 있습니다.
   
       이 펀딩은 장애인 스포츠 지원을 위해 필요한 예산을 마련하기 위해 시작되었습니다. 운동장 임대비, 장애인용 스포츠 용품 구입, 강사 고용 등에 사용될 예정입니다. 모두가 스포츠를 즐길 수 있는 사회를 만들기 위해 많은 관심과 참여를 부탁드립니다.`,
     tag: "장애인",
-    request_num: 30,
+    requested_num: 30,
     created_time: "2022-01-06",
     finished_time: "2022-07-31",
     influencer: "김지현",
-    image_urls: ["/img/image6.png"],
+    image_urls: [{ image_url: "/img/image6.png" }],
   },
   {
     id: 7,
-    writer_name: "박민우",
+    writer_name: { id: 27, name: "박민우" },
     title: "청소년 교육 지원 펀딩",
     content: `안녕하세요, 저희는 청소년들의 교육을 지원하기 위한 프로그램을 개발하고 있습니다. 청소년들은 미래의 주역으로서 발전할 수 있는 환경과 교육을 받아야 합니다. 저희 프로그램은 그러한 목표를 이루기 위해 시작되었습니다.
   
       이 펀딩은 청소년 교육 프로그램 개발을 위해 필요한 예산을 마련하기 위해 시작되었습니다. 교재 구매, 교육 장비 구입, 강사 고용 등에 사용될 예정입니다. 청소년들의 꿈을 키우기 위해 많은 관심과 참여를 부탁드립니다.`,
     tag: "교육",
-    request_num: 20,
+    requested_num: 20,
     created_time: "2022-01-07",
     finished_time: "2022-08-31",
     influencer: "박민우",
-    image_urls: ["/img/image7.png"],
+    image_urls: [{ image_url: "/img/image7.png" }],
   },
   {
     id: 8,
-    writer_name: "김수민",
+    writer_name: { id: 28, name: "김수민" },
     title: "여성 일자리 창출 펀딩",
     content: `안녕하세요, 여성 일자리 창출을 위한 사회적 기업을 운영하고 있는 김수민입니다. 여성들에게 경제적인 독립과 사회 진출 기회를 제공하기 위해 다양한 프로젝트를 진행하고 있습니다.
   
       이 펀딩은 여성 일자리 창출 프로젝트를 위해 필요한 예산을 마련하기 위해 시작되었습니다. 직업 교육 비용, 직무 훈련 지원, 창업 지원 등에 사용될 예정입니다. 여성의 경제적 자립을 위해 많은 관심과 참여를 부탁드립니다.`,
     tag: "사회복지",
-    request_num: 30,
+    requested_num: 30,
     created_time: "2022-01-08",
     finished_time: "2022-09-30",
     influencer: "김수민",
-    image_urls: ["/img/image8.png"],
+    image_urls: [{ image_url: "/img/image8.png" }],
   },
   {
     id: 9,
-    writer_name: "박지훈",
+    writer_name: { id: 29, name: "박지훈" },
     title: "사회적 약자 지원 펀딩",
     content: `안녕하세요, 저희는 사회적으로 약한 계층을 위한 지원 프로그램을 운영하고 있습니다. 저소득층, 노인, 장애인 등 다양한 사회적 약자들이 보다 풍요롭고 안정된 삶을 영위할 수 있도록 도움을 주고자 합니다.
   
       이 펀딩은 사회적 약자 지원을 위해 필요한 예산을 마련하기 위해 시작되었습니다. 생필품 지원, 의료 비용 지원, 교육 지원 등에 사용될 예정입니다. 사회적으로 취약한 분들을 돕기 위해 많은 관심과 참여를 부탁드립니다.`,
     tag: "사회복지",
-    request_num: 20,
+    requested_num: 20,
     created_time: "2022-01-09",
     finished_time: "2022-10-31",
     influencer: "박지훈",
-    image_urls: ["/img/image9.png"],
+    image_urls: [{ image_url: "/img/image9.png" }],
   },
   {
     id: 10,
-    writer_name: "김서연",
+    writer_name: { id: 30, name: "김서연" },
     title: "문화 예술 프로젝트 펀딩",
     content: `안녕하세요, 저희는 다양한 예술 분야의 창작가들을 지원하고 문화 예술 활동을 발전시키기 위한 펀딩을 시작하려고 합니다. 예술은 우리 사회의 풍요로움과 아름다움을 창출하는 중요한 요소입니다.
   
       이 펀딩은 문화 예술 프로젝트를 위해 필요한 예산을 마련하기 위해 시작되었습니다. 창작 활동 지원, 공연 장소 대여, 예술가 지원 등에 사용될 예정입니다. 문화 예술 분야의 발전을 위해 많은 관심과 참여를 부탁드립니다.`,
     tag: "문화",
-    request_num: 40,
+    requested_num: 40,
     created_time: "2022-01-10",
     finished_time: "2022-11-30",
     influencer: "김서연",
-    image_urls: ["/img/image10.png"],
+    image_urls: [{ image_url: "/img/image10.png" }],
   },
   // 추가적인 요소들...
 ];
