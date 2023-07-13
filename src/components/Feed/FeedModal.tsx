@@ -15,6 +15,7 @@ import Layout from "./Layout";
 import { feedState } from "@/store/atom";
 import { useRecoilValue } from "recoil";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 // interface IFeed {
 //   id: number;
@@ -47,6 +48,7 @@ export default function FeedModal() {
         <div className="px-[30px] py-[20px] w-[100%] h-[100%]">
           <div className="flex justify-between">
             <PersonInfo name={`${feed?.writer?.name}`} />
+
             <button className="bg-sub2 px-[20px] rounded-md text-black font-bold text-[14px]">
               펀딩 요청하기
             </button>
