@@ -77,9 +77,9 @@ export default function FundAddPage() {
               />
             )}
           />
-          <Asynchronous control={control} />
+          <Select control={control} />
           <Influencer control={control} />
-          <Content control={control} />
+          <Content control={control} label={"펀딩 내용"} />
 
           <Button
             onClick={handleSubmit(onValid)}
