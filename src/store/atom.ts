@@ -20,5 +20,5 @@ export const feedModalState = atom({
 
 export const feedState = atom({
   key: "feed",
-  default: {},
+  default: null,
 });

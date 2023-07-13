@@ -4,9 +4,11 @@ import { feedModalState, feedState, userState } from "@/store/atom";
 import PersonInfo from "./PersonInfo";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { IFeed } from "./data";
 
 type Props = {
-  feed: any;
+  feed?: IFeed | null;
 };
 
 export default function Feed({ feed }: Props) {
@@ -26,13 +28,13 @@ export default function Feed({ feed }: Props) {
       }}
     >
       <img
-        src={feed?.image_urls[0]}
+        src={feed?.image_urls[0]?.image_url}
         className="h-[180px] rounded-md bg-gray-300"
-        alt={feed?.image_urls[0]}
+        alt={feed?.image_urls[0]?.image_url}
       />
 
       <div className="flex items-center justify-between">
-        <PersonInfo name={feed?.writer_name} />
+        <PersonInfo name={feed?.writer?.name} />
 
         <div className="flex items-center">
           <svg

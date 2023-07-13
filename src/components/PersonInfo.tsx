@@ -11,7 +11,6 @@ type Props = {
 
 export default function PersonInfo({ name }: Props) {
   const user = useRecoilValue(userState);
-
   const pathname = usePathname();
 
   const convertName = (name: string) => {

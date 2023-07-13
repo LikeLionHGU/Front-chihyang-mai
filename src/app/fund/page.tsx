@@ -1,7 +1,11 @@
+"use client";
+
+import { getFeed } from "@/apis/feed";
 import Fund from "@/components/Fund";
 import Title from "@/components/Home/Title";
 import { FundingExamples } from "@/components/data";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function FundPage() {
   const fundings = FundingExamples;

@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import PersonInfo from "../PersonInfo";
 import {
   FeedExamples,
+  IFeed,
   messagesAboutFundingExamples,
   messagesExamples,
 } from "../data";
@@ -13,22 +14,39 @@ import FundingCommentBlock from "./FundingCommentBlock";
 import Layout from "./Layout";
 import { feedState } from "@/store/atom";
 import { useRecoilValue } from "recoil";
+import { useEffect, useState } from "react";
+
+// interface IFeed {
+//   id: number;
+//   writer: {
+//     id: number;
+//     name: string;
+//   };
+//   content: string;
+//   image_urls: any;
+//   tag: string;
+// }
 
 export default function FeedModal() {
+  // const [feed, setFeed] = useState<IFeed | null>(null);
   const feed = useRecoilValue(feedState);
+  // useEffect(() => {
+  //   setFeed(useRecoilValue(feedState));
+  // }, []);
+  // console.log(feed?.image_urls[0].image_url);
 
   return (
     <Layout>
       <div className="w-[600px] h-[700px] z-50 bg-white relative ">
         <img
-          src={feed?.image_urls}
+          src={`${feed?.image_urls[0]?.image_url}`}
           className="bg-gray-100 w-[100%] h-[300px] flex items-center justify-center text-[25px]"
         />
 
         <CancelButton />
         <div className="px-[30px] py-[20px] w-[100%] h-[100%]">
           <div className="flex justify-between">
-            <PersonInfo name={`${feed?.writer_name}`} />
+            <PersonInfo name={`${feed?.writer?.name}`} />
             <button className="bg-sub2 px-[20px] rounded-md text-black font-bold text-[14px]">
               펀딩 요청하기
             </button>

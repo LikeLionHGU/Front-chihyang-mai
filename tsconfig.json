@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/Firebase/firebase.js", "src/components/ImageUpload.jsx", "src/components/UploadImage.jsx"],
   "exclude": ["node_modules"]
 }
