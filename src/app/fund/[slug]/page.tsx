@@ -11,10 +11,8 @@ interface IProp {
 }
 
 export default function DetailPage({ params }: any) {
-  //   const funding = FundingExamples[0];
-
   const searchParams = useSearchParams();
-  // Log the values
+
   let funding: any = {};
 
   // Loop over the searchParams
@@ -22,14 +20,11 @@ export default function DetailPage({ params }: any) {
     // Assign each key-value pair to the 'funding' object
     funding[key] = value;
   });
-  //   const searchParams = useSearchParams();
-  //   const pathname = usePathname();
-  //   console.log(searchParams.getAll);
 
   return (
-    <div className="px-[100px] py-[50px]">
+    <div className="px-[100px] py-[50px] mb-[50px]">
       <PersonInfo
-        title="펀딩 요청하기 작성 페이지"
+        title="요청중인 펀딩"
         image_url="/static/images/avatar/1.jpg"
       />
       <div className="flex gap-[30px]">

@@ -14,7 +14,7 @@ export default function Home() {
   const fundings = FundingExamples;
 
   //feed가져오기
-  getFeed().then((res) => console.log(res));
+  // getFeed().then((res) => console.log(res));
 
   return (
     <div className="bg-white flex flex-col gap-[50px]">
@@ -26,12 +26,7 @@ export default function Home() {
         />
         <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
           {feeds.slice(0, 5).map((feed) => (
-            <Feed
-              key={feed.id}
-              content={feed.content}
-              likes={feed.id}
-              name={feed.writer_name}
-            />
+            <Feed key={feed.id} feed={feed} />
           ))}
         </div>
       </div>
@@ -42,18 +37,12 @@ export default function Home() {
             subTitle="가장 핫한 펀딩을 만나보세요!"
           />
           {fundings.slice(0, 5).map((funding, index) => (
-            <Link
-              href={{
-                pathname: `/fund/${funding.id}`,
-                query: funding,
-              }}
-            >
-              <FeedBlock
-                title={funding.title}
-                request_num={funding.request_num}
-                index={index + 1}
-              />
-            </Link>
+            <FeedBlock
+              funding={funding}
+              title={funding.title}
+              request_num={funding.request_num}
+              index={index + 1}
+            />
           ))}
         </div>
         <div className="flex flex-col gap-[20px] w-[100%]">
@@ -62,18 +51,12 @@ export default function Home() {
             subTitle="내 취미에 맞는 펀딩 목록을 추천해줘요!"
           />
           {fundings.slice(0, 5).map((funding, index) => (
-            <Link
-              href={{
-                pathname: `/fund/${funding.id}`,
-                query: funding,
-              }}
-            >
-              <FeedBlock
-                title={funding.title}
-                request_num={funding.request_num}
-                index={index + 1}
-              />
-            </Link>
+            <FeedBlock
+              funding={funding}
+              title={funding.title}
+              request_num={funding.request_num}
+              index={index + 1}
+            />
           ))}
         </div>
       </div>

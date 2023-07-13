@@ -1,11 +1,22 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
 import PersonInfo from "../PersonInfo";
-import { messagesAboutFundingExamples, messagesExamples } from "../data";
+import {
+  FeedExamples,
+  messagesAboutFundingExamples,
+  messagesExamples,
+} from "../data";
 import CancelButton from "./CancelButton";
 import CommentBlock from "./CommentBlock";
 import FundingCommentBlock from "./FundingCommentBlock";
 import Layout from "./Layout";
+import { feedState } from "@/store/atom";
+import { useRecoilValue } from "recoil";
 
 export default function FeedModal() {
+  const feed = useRecoilValue(feedState);
+
   return (
     <Layout>
       <div className="w-[600px] h-[700px] z-50 bg-white relative ">
@@ -15,18 +26,14 @@ export default function FeedModal() {
         <CancelButton />
         <div className="px-[30px] py-[20px] w-[100%] h-[100%]">
           <div className="flex justify-between">
-            <PersonInfo name="나는 그림초보입니다" />
+            <PersonInfo name={`${feed?.writer_name}`} />
             <button className="bg-sub2 px-[20px] rounded-md text-black font-bold">
               펀딩 요청하기
             </button>
           </div>
-          <div className="font-bold my-[10px]">
-            오늘도 유튜버 00님 영상을 보고 따라서 그려봤는데..ㅠㅠㅠ아ㅠㅠ분명
-            영상에서는 쉽게쉽게 쓱쓱 그리던데.. 나는 그 느낌이 안 나네.. 그래도
-            처음보다는 나름 똥손 탈출
-          </div>
+          <div className="font-bold my-[10px]">{feed?.content}</div>
           <button className="bg-sub2 px-[25px] py-[5px] rounded-md">
-            예술
+            {feed?.tag}
           </button>
           <div className="flex items-center gap-[10px] my-[10px]">
             <svg
@@ -39,7 +46,7 @@ export default function FeedModal() {
             <div className="font-bold">324 liked</div>
           </div>
           <div className="w-[100%] h-[120px] overflow-y-scroll flex flex-col gap-1">
-            {messagesAboutFundingExamples[0]?.map(
+            {messagesAboutFundingExamples[feed?.id % 4]?.map(
               (message: any, index: number) => (
                 <FundingCommentBlock
                   key={index}
@@ -48,7 +55,7 @@ export default function FeedModal() {
                 />
               )
             )}
-            {messagesExamples[0]?.map((message, index) => (
+            {messagesExamples[feed?.id % 4]?.map((message, index) => (
               <CommentBlock
                 key={index}
                 comment={message?.message}

@@ -34,12 +34,7 @@ export default function FeedPage() {
           </div>
           <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
             {feeds.slice(0, 15).map((feed) => (
-              <Feed
-                key={feed.id}
-                content={feed.content}
-                likes={feed.id}
-                name={feed.writer_name}
-              />
+              <Feed key={feed.id} feed={feed} />
             ))}
           </div>
           <div className="h-[100px]"> </div>

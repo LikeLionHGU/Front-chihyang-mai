@@ -16,20 +16,7 @@ export default function FundPage() {
           />
           <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
             {fundings.slice(0, 10).map((funding) => (
-              <Link
-                href={{
-                  pathname: `/fund/${funding.id}`,
-                  query: funding,
-                }}
-                as={`/fund/${funding.id}`}
-              >
-                <Fund
-                  key={funding.id}
-                  content={funding.content}
-                  request_num={funding.request_num}
-                  name={funding.writer_name}
-                />
-              </Link>
+              <Fund key={funding.id} funding={funding} />
             ))}
           </div>
         </div>
@@ -41,12 +28,7 @@ export default function FundPage() {
           />
           <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
             {fundings.slice(0, 10).map((funding) => (
-              <Fund
-                key={funding.id}
-                content={funding.content}
-                request_num={funding.request_num}
-                name={funding.writer_name}
-              />
+              <Fund key={funding.id} funding={funding} />
             ))}
           </div>
         </div>

@@ -4,6 +4,7 @@ import { FeedExamples, FundingExamples } from "@/components/data";
 import FeedBlock from "@/components/FeedBlock";
 import Link from "next/link";
 import ProfileName from "@/components/Profile/ProfileName";
+import FeedModal from "@/components/Feed/FeedModal";
 
 export default function Profile() {
   const feeds = FeedExamples;
@@ -26,12 +27,7 @@ export default function Profile() {
         />
         <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
           {feeds.slice(0, 5).map((feed) => (
-            <Feed
-              key={feed.id}
-              content={feed.content}
-              likes={feed.id}
-              name={feed.writer_name}
-            />
+            <Feed key={feed.id} feed={feed} />
           ))}
         </div>
       </div>
@@ -42,13 +38,7 @@ export default function Profile() {
             subTitle="요청한 펀딩의 현황을 볼 수 있어요!"
           />
           {fundings.slice(0, 5).map((funding, index) => (
-            <Link href={`/fund/${funding.id}`}>
-              <FeedBlock
-                title={funding.title}
-                request_num={funding.request_num}
-                index={index + 1}
-              />
-            </Link>
+            <FeedBlock funding={funding} index={index + 1} />
           ))}
         </div>
         <div className="flex flex-col gap-[20px] w-[100%]">
@@ -57,17 +47,12 @@ export default function Profile() {
             subTitle="자신이 모금한 펀딩의 현황을 살펴보세요"
           />
           {fundings.slice(0, 5).map((funding, index) => (
-            <Link href={`/fund/${funding.id}`}>
-              <FeedBlock
-                title={funding.title}
-                request_num={funding.request_num}
-                index={index + 1}
-              />
-            </Link>
+            <FeedBlock funding={funding} index={index + 1} />
           ))}
         </div>
       </div>
       <div></div>
+      <FeedModal />
     </div>
   );
 }
