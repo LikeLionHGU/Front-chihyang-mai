@@ -306,3 +306,34 @@ export const messagesExamples = [
     { name: "팬12", message: "펀딩 성공 기원합니다!" },
   ],
 ];
+
+export interface ImageUrl {
+  image_url: string;
+}
+
+export interface Writer {
+  id: number;
+  name: string;
+}
+
+export interface IFeed {
+  content: string;
+  created_time: null | string; // Adjust as per your requirements
+  id: number;
+  image_urls: ImageUrl[];
+  tag: string;
+  writer: Writer;
+}
+
+export interface IFunding {
+  id: number;
+  writer: Writer;
+  title: string;
+  content: string;
+  tag: string;
+  requested_num: number;
+  created_time: string;
+  finished_time: string;
+  influencer: string;
+  image_urls: ImageUrl[];
+}

@@ -22,3 +22,8 @@ export const feedState = atom({
   key: "feed",
   default: null,
 });
+
+export const fundingState = atom({
+  key: "funding",
+  default: null,
+});

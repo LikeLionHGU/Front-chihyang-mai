@@ -23,6 +23,10 @@ import TextareaDecorators from "@/components/FundAdd/TextareaDecorator";
 import Influencer from "@/components/FundAdd/Influencer";
 import Content from "@/components/FundAdd/Content";
 import ImageUpload from "@/components/ImageUpload";
+import { postFunding } from "@/apis/funding";
+import { useRecoilValue } from "recoil";
+import { userState } from "@/store/atom";
+import { useRouter } from "next/navigation";
 
 // import UploadImage from "@/components/UploadImage";
 
@@ -35,8 +39,11 @@ interface IFormData {
 }
 
 export default function FundAddPage() {
+  const user_id = useRecoilValue(userState).id;
+  const router = useRouter();
   const onValid = (formData: IFormData) => {
     const newFunding = {
+      writer_id: user_id,
       title: formData.title,
       content: formData.content,
       tag: formData.tag?.title,
@@ -44,7 +51,12 @@ export default function FundAddPage() {
       image_urls: [formData.image_urls],
     };
 
-    console.log(newFunding);
+    postFunding(newFunding).then((res) => {
+      if (res.data) {
+        alert("펀딩이 생성되었습니다.");
+        router.push("/fund");
+      }
+    });
   };
   const { handleSubmit, control, setValue, getValues, watch } =
     useForm<IFormData>({

@@ -1,16 +1,20 @@
+"use client";
+import { fundingState } from "@/store/atom";
 import Link from "next/link";
+import { useSetRecoilState } from "recoil";
 
 export default function FeedBlock({ index, funding }: any) {
+  const setFunding = useSetRecoilState(fundingState);
   return (
     <Link
       href={{
         pathname: `/fund/${funding?.id}`,
-        query: funding,
       }}
+      onClick={() => setFunding(funding)}
     >
       <div className="flex border rounded-md border-container1 text-black">
         <img
-          src={funding?.image_urls[0]}
+          src={funding?.image_urls[0].image_url}
           className="bg-gray-200 w-[100px] h-[70px]"
         />
         <div className="flex justify-between pl-[10px] pr-[50px] items-center w-[100%]">
