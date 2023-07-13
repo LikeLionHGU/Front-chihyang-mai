@@ -35,7 +35,7 @@ export default function Header() {
 
         <FunctionButton text={"펀딩 요청하기"} link="/fund/add" />
 
-        <DarkModeToggle />
+        {/* <DarkModeToggle /> */}
       </div>
     </div>
   );

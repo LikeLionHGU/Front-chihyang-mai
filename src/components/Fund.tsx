@@ -5,6 +5,7 @@ import PersonInfo from "./PersonInfo";
 import { IFunding } from "./data";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { fundingState } from "@/store/atom";
+import { motion } from "framer-motion";
 
 type Props = {
   funding: any;
@@ -25,7 +26,7 @@ export default function Fund({ funding }: Props) {
       }}
       onClick={() => setFunding(funding)}
     >
-      <div className="flex flex-col gap-[10px]">
+      <motion.div whileHover={{ y: -5 }} className="flex flex-col gap-[10px]">
         <img
           src={funding?.image_urls[0].image_url}
           className="h-[180px] rounded-md bg-gray-300"
@@ -51,7 +52,7 @@ export default function Fund({ funding }: Props) {
         <div className="text-black font-bold">
           {summaryContent(funding?.content)}
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 }

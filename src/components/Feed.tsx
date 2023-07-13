@@ -21,6 +21,7 @@ export default function Feed({ feed }: Props) {
   const setFeed = useSetRecoilState(feedState);
   return (
     <motion.div
+      whileHover={{ y: -5 }}
       className="flex flex-col gap-[10px]"
       onClick={() => {
         setFeed(feed);

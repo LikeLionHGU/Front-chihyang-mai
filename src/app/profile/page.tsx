@@ -29,12 +29,17 @@ export default function Profile() {
 
   return (
     <div className="bg-white flex flex-col gap-[50px]">
-      <div className="w-[100%] border h-[300px] bg-gray-200" />
+      <img
+        src={"/img/profile.png"}
+        className="w-[100%] border h-[300px] bg-gray-200"
+      />
+
       <div className="px-[100px] relative">
         <div className="flex gap-[30px] items-end absolute top-[-125px]">
-          <div className="w-[150px] h-[150px] rounded-full flex justify-center items-center bg-gray-300 font-bold">
-            프로필 사진
-          </div>
+          <img
+            src={"/img/me.png"}
+            className="w-[150px] h-[150px] rounded-full flex justify-center items-center bg-gray-300 font-bold"
+          />
           <ProfileName />
         </div>
         <div className="h-[100px]"></div>
