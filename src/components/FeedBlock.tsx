@@ -9,7 +9,10 @@ export default function FeedBlock({ index, funding }: any) {
       }}
     >
       <div className="flex border rounded-md border-container1 text-black">
-        <div className="bg-gray-200 w-[100px] h-[70px]"></div>
+        <img
+          src={funding?.image_urls[0]}
+          className="bg-gray-200 w-[100px] h-[70px]"
+        />
         <div className="flex justify-between pl-[10px] pr-[50px] items-center w-[100%]">
           <div className="flex flex-col items-start justify-center">
             <span className="font-bold">{funding?.title}</span>

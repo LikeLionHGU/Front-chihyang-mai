@@ -8,6 +8,7 @@ import Link from "next/link";
 import { getFeed } from "@/apis/feed";
 import { useEffect } from "react";
 import FeedModal from "@/components/Feed/FeedModal";
+import Banner from "@/components/Home/Banner";
 
 export default function Home() {
   const feeds = FeedExamples;
@@ -18,7 +19,7 @@ export default function Home() {
 
   return (
     <div className="bg-white flex flex-col gap-[50px]">
-      <div className="w-[100%] border h-[300px] bg-gray-200" />
+      <Banner />
       <div className="px-[100px]">
         <Title
           title="실시간 인기 피드"

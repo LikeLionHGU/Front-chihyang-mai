@@ -1,9 +1,11 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
-export default function page() {
+export default function Banner() {
   const [currentNum, setCurrentNum] = useState(1);
+
+  //시간이 지날 수록 1씩 올라가고 %4해주기
 
   return (
     <div className="relative">

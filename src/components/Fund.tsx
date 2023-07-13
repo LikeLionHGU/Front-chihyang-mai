@@ -19,7 +19,12 @@ export default function Fund({ funding }: Props) {
       }}
     >
       <div className="flex flex-col gap-[10px]">
-        <div className="h-[180px] rounded-md bg-gray-300" />
+        <img
+          src={funding?.image_urls[0]}
+          className="h-[180px] rounded-md bg-gray-300"
+          alt={funding?.image_urls[0]}
+        />
+
         <div className="flex items-center justify-between">
           <PersonInfo name={funding?.name} />
 

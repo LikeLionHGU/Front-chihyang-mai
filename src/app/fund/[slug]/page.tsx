@@ -28,7 +28,12 @@ export default function DetailPage({ params }: any) {
         image_url="/static/images/avatar/1.jpg"
       />
       <div className="flex gap-[30px]">
-        <div className="w-[55%] h-[480px] bg-gray-100 flex items-center justify-center"></div>
+        <img
+          src={funding.image_urls}
+          className="w-[55%] h-[480px] bg-gray-100 flex items-center justify-center"
+          alt={funding.image_urls}
+        />
+
         <div className="flex flex-col items-start w-[45%] justify-between ">
           <div className="text-[30px] font-bold">{funding.title}</div>
           <div className="bg-sub2 px-[15px] py-[3px] rounded-md">

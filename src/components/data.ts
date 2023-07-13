@@ -6,7 +6,7 @@ export const FeedExamples = [
     tag: "운동",
     createdTime: "2022-01-02",
     writer_name: "홍길동",
-    image_urls: ["./image1.png"],
+    image_urls: ["/img/image1.png"],
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const FeedExamples = [
     tag: "음식",
     createdTime: "2022-01-03",
     writer_name: "이영희",
-    image_urls: ["./image2.png"],
+    image_urls: ["/img/image2.png"],
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const FeedExamples = [
     tag: "여행",
     createdTime: "2022-01-04",
     writer_name: "박철수",
-    image_urls: ["./image3.png"],
+    image_urls: ["/img/image3.png"],
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const FeedExamples = [
     tag: "일상",
     createdTime: "2022-01-05",
     writer_name: "김예린",
-    image_urls: ["./image4.png"],
+    image_urls: ["/img/image4.png"],
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const FeedExamples = [
     tag: "도서",
     createdTime: "2022-01-06",
     writer_name: "정민우",
-    image_urls: ["./image5.png"],
+    image_urls: ["/img/image5.png"],
   },
   // 추가적인 요소들...
   {
@@ -52,7 +52,7 @@ export const FeedExamples = [
     tag: "창작",
     createdTime: "2022-01-07",
     writer_name: "이지원",
-    image_urls: ["./image6.png"],
+    image_urls: ["/img/image6.png"],
   },
   {
     id: 7,
@@ -61,7 +61,7 @@ export const FeedExamples = [
     tag: "취미",
     createdTime: "2022-01-08",
     writer_name: "김민준",
-    image_urls: ["./image7.png"],
+    image_urls: ["/img/image7.png"],
   },
   {
     id: 8,
@@ -70,7 +70,7 @@ export const FeedExamples = [
     tag: "영화",
     createdTime: "2022-01-09",
     writer_name: "박지우",
-    image_urls: ["./image8.png"],
+    image_urls: ["/img/image8.png"],
   },
   {
     id: 9,
@@ -79,7 +79,7 @@ export const FeedExamples = [
     tag: "성취",
     createdTime: "2022-01-10",
     writer_name: "김현아",
-    image_urls: ["./image9.png"],
+    image_urls: ["/img/image9.png"],
   },
   {
     id: 10,
@@ -88,7 +88,7 @@ export const FeedExamples = [
     tag: "인연",
     createdTime: "2022-01-11",
     writer_name: "이승호",
-    image_urls: ["./image10.png"],
+    image_urls: ["/img/image10.png"],
   },
 ];
 
@@ -105,7 +105,7 @@ export const FundingExamples = [
     created_time: "2022-01-01",
     finished_time: "2022-02-28",
     influencer: "김철수",
-    image_urls: ["./image1.png"],
+    image_urls: ["/img/image1.png"],
   },
   {
     id: 2,
@@ -119,7 +119,7 @@ export const FundingExamples = [
     created_time: "2022-01-02",
     finished_time: "2022-03-31",
     influencer: "이영희",
-    image_urls: ["./image2.png"],
+    image_urls: ["/img/image2.png"],
   },
   {
     id: 3,
@@ -133,7 +133,7 @@ export const FundingExamples = [
     created_time: "2022-01-03",
     finished_time: "2022-04-30",
     influencer: "박영수",
-    image_urls: ["./image3.png"],
+    image_urls: ["/img/image3.png"],
   },
   {
     id: 4,
@@ -147,7 +147,7 @@ export const FundingExamples = [
     created_time: "2022-01-04",
     finished_time: "2022-05-31",
     influencer: "정민지",
-    image_urls: ["./image4.png"],
+    image_urls: ["/img/image4.png"],
   },
   {
     id: 5,
@@ -161,7 +161,7 @@ export const FundingExamples = [
     created_time: "2022-01-05",
     finished_time: "2022-06-30",
     influencer: "이준호",
-    image_urls: ["./image5.png"],
+    image_urls: ["/img/image5.png"],
   },
   {
     id: 6,
@@ -175,7 +175,7 @@ export const FundingExamples = [
     created_time: "2022-01-06",
     finished_time: "2022-07-31",
     influencer: "김지현",
-    image_urls: ["./image6.png"],
+    image_urls: ["/img/image6.png"],
   },
   {
     id: 7,
@@ -189,7 +189,7 @@ export const FundingExamples = [
     created_time: "2022-01-07",
     finished_time: "2022-08-31",
     influencer: "박민우",
-    image_urls: ["./image7.png"],
+    image_urls: ["/img/image7.png"],
   },
   {
     id: 8,
@@ -203,7 +203,7 @@ export const FundingExamples = [
     created_time: "2022-01-08",
     finished_time: "2022-09-30",
     influencer: "김수민",
-    image_urls: ["./image8.png"],
+    image_urls: ["/img/image8.png"],
   },
   {
     id: 9,
@@ -217,7 +217,7 @@ export const FundingExamples = [
     created_time: "2022-01-09",
     finished_time: "2022-10-31",
     influencer: "박지훈",
-    image_urls: ["./image9.png"],
+    image_urls: ["/img/image9.png"],
   },
   {
     id: 10,
@@ -231,7 +231,7 @@ export const FundingExamples = [
     created_time: "2022-01-10",
     finished_time: "2022-11-30",
     influencer: "김서연",
-    image_urls: ["./image10.png"],
+    image_urls: ["/img/image10.png"],
   },
   // 추가적인 요소들...
 ];

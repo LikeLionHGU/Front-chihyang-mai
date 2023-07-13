@@ -20,7 +20,7 @@ export default function FeedPage() {
 
   return (
     <div className="bg-white flex flex-col gap-[50px]">
-      <div className="w-[100%] border h-[300px] bg-gray-200" />
+      <img src={"./img/feedBanner.png"} />
       <div className="px-[100px] flex flex-col gap-[50px]">
         <div>
           <div className="flex justify-between items-end">

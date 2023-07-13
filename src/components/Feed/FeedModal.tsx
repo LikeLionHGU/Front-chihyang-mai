@@ -20,19 +20,21 @@ export default function FeedModal() {
   return (
     <Layout>
       <div className="w-[600px] h-[700px] z-50 bg-white relative ">
-        <div className="bg-gray-100 w-[100%] h-[300px] flex items-center justify-center text-[25px]">
-          이미지 / 영상
-        </div>
+        <img
+          src={feed?.image_urls}
+          className="bg-gray-100 w-[100%] h-[300px] flex items-center justify-center text-[25px]"
+        />
+
         <CancelButton />
         <div className="px-[30px] py-[20px] w-[100%] h-[100%]">
           <div className="flex justify-between">
             <PersonInfo name={`${feed?.writer_name}`} />
-            <button className="bg-sub2 px-[20px] rounded-md text-black font-bold">
+            <button className="bg-sub2 px-[20px] rounded-md text-black font-bold text-[14px]">
               펀딩 요청하기
             </button>
           </div>
           <div className="font-bold my-[10px]">{feed?.content}</div>
-          <button className="bg-sub2 px-[25px] py-[5px] rounded-md">
+          <button className="bg-sub2 px-[25px] text-[13px] py-[5px] rounded-md">
             {feed?.tag}
           </button>
           <div className="flex items-center gap-[10px] my-[10px]">

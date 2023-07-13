@@ -25,7 +25,12 @@ export default function Feed({ feed }: Props) {
         setFeedMadal(true);
       }}
     >
-      <div className="h-[180px] rounded-md bg-gray-300" />
+      <img
+        src={feed?.image_urls[0]}
+        className="h-[180px] rounded-md bg-gray-300"
+        alt={feed?.image_urls[0]}
+      />
+
       <div className="flex items-center justify-between">
         <PersonInfo name={feed?.writer_name} />
 
