@@ -22,38 +22,54 @@ import { useForm, Controller } from "react-hook-form";
 import TextareaDecorators from "@/components/FundAdd/TextareaDecorator";
 import Influencer from "@/components/FundAdd/Influencer";
 import Content from "@/components/FundAdd/Content";
+import ImageUpload from "@/components/ImageUpload";
+import { postFunding } from "@/apis/funding";
+import { useRecoilValue } from "recoil";
+import { userState } from "@/store/atom";
+import { useRouter } from "next/navigation";
 
 // import UploadImage from "@/components/UploadImage";
 
 interface IFormData {
   title: string;
   content: string;
-  tag: string | null;
+  tag: any;
   influencer: string[];
-  image_urls: string[];
+  image_urls: string;
 }
 
 export default function FundAddPage() {
+  const user_id = useRecoilValue(userState).id;
+  const router = useRouter();
   const onValid = (formData: IFormData) => {
     const newFunding = {
+      writer_id: user_id,
       title: formData.title,
       content: formData.content,
-      tag: formData.tag,
+      tag: formData.tag?.title,
       influencer: formData.influencer[0],
-      image_urls: formData.image_urls,
+      image_urls: [formData.image_urls],
     };
 
-    console.log(newFunding);
+    postFunding(newFunding).then((res) => {
+      if (res.data) {
+        alert("펀딩이 생성되었습니다.");
+        router.push("/fund");
+      }
+    });
   };
-  const { handleSubmit, control, setValue, getValues } = useForm<IFormData>({
-    defaultValues: {
-      title: "",
-      content: "",
-      tag: null,
-      influencer: [],
-      image_urls: [],
-    },
-  });
+  const { handleSubmit, control, setValue, getValues, watch } =
+    useForm<IFormData>({
+      defaultValues: {
+        title: "",
+        content: "",
+        tag: null,
+        influencer: [],
+        image_urls: "",
+      },
+    });
+
+  watch("image_urls");
   return (
     <div className="px-[100px] py-[50px]">
       <PersonInfo
@@ -62,6 +78,12 @@ export default function FundAddPage() {
       />
       <div className="flex gap-[30px]">
         <div className="w-[55%] h-[480px] bg-gray-100 flex items-center justify-center">
+          {getValues("image_urls") === "" ? (
+            <ImageUpload setValue={setValue} />
+          ) : (
+            <img src={getValues("image_urls")} />
+          )}
+
           {/* <UploadImage setValue={setValue} getValues={getValues} /> */}
         </div>
         <div className="flex flex-col items-start w-[45%] justify-between gap-[20px]">
@@ -79,7 +101,7 @@ export default function FundAddPage() {
           />
           <Asynchronous control={control} />
           <Influencer control={control} />
-          <Content control={control} />
+          <Content control={control} label={"펀딩 내용"} />
 
           <Button
             onClick={handleSubmit(onValid)}
