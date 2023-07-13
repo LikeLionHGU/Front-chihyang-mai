@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function ImageUpload({ setValue }: any) {
   const inputRef = useRef(null);
@@ -27,12 +28,13 @@ export default function ImageUpload({ setValue }: any) {
         onChange={handleChange}
       />
 
-      <button
-        className="bg-sub2 rounded-md px-[20px] py-[5px]"
+      <motion.button
+        whileHover={{ y: [0, -10, 0, 0, -10, 0] }}
+        className="bg-container1 text-main rounded-md px-[30px] py-[10px]"
         onClick={handleClick}
       >
         이미지 업로드
-      </button>
+      </motion.button>
     </>
   );
 }

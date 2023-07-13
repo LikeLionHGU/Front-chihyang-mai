@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 
 export default function FundPage() {
   // const fundings = FundingExamples;
-
+  const raiseFundings = FundingExamples;
   const [fundings, setFundings] = useState([]);
 
   useEffect(() => {
@@ -30,9 +30,12 @@ export default function FundPage() {
             subTitle="다른 맴버들이 어떤 펀딩을 원하는지 살펴보고, 함께 지지해 보세요"
           />
           <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
-            {fundings?.slice(0, 10).map((funding: IFunding) => (
-              <Fund key={funding?.id} funding={funding} />
-            ))}
+            {fundings
+              ?.reverse()
+              ?.slice(0, 10)
+              .map((funding: IFunding) => (
+                <Fund key={funding?.id} funding={funding} />
+              ))}
           </div>
         </div>
 
@@ -42,7 +45,7 @@ export default function FundPage() {
             subTitle="요청이 수락되어 모금 중인 펀딩에 실제로 참여해보세요."
           />
           <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
-            {fundings?.slice(0, 10).map((funding: IFunding) => (
+            {raiseFundings?.slice(0, 10).map((funding: any) => (
               <Fund key={funding?.id} funding={funding} />
             ))}
           </div>

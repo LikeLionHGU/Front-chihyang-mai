@@ -15,10 +15,11 @@ import FeedModal from "@/components/Feed/FeedModal";
 import { useEffect, useState } from "react";
 import { getFeed } from "@/apis/feed";
 import { getFunding } from "@/apis/funding";
+import { motion } from "framer-motion";
 
 export default function Profile() {
   // const feeds = FeedExamples;
-  // const fundings = FundingExamples;
+  const raiseFundings = FundingExamples;
   const [feeds, setFeeds] = useState<IFeed[] | []>([]);
   const [fundings, setFundings] = useState<IFunding[] | []>([]);
 
@@ -29,11 +30,19 @@ export default function Profile() {
 
   return (
     <div className="bg-white flex flex-col gap-[50px]">
-      <div className="w-[100%] border h-[300px] bg-gray-200" />
+      <img
+        src={"/img/profile.png"}
+        className="w-[100%] border h-[300px] bg-gray-200"
+      />
+
       <div className="px-[100px] relative">
         <div className="flex gap-[30px] items-end absolute top-[-125px]">
-          <div className="w-[150px] h-[150px] rounded-full flex justify-center items-center bg-gray-300 font-bold">
-            프로필 사진
+          <div className="overflow-hidden w-[150px] h-[150px] rounded-full">
+            <motion.img
+              whileHover={{ scale: 1.2 }}
+              src={"/img/me.png"}
+              className="w-[150px] h-[150px] rounded-full flex justify-center items-center bg-gray-300 font-bold"
+            />
           </div>
           <ProfileName />
         </div>
@@ -63,7 +72,7 @@ export default function Profile() {
             title="내가 모금한 펀딩"
             subTitle="자신이 모금한 펀딩의 현황을 살펴보세요"
           />
-          {fundings?.slice(0, 5)?.map((funding, index) => (
+          {raiseFundings?.slice(0, 5)?.map((funding, index) => (
             <FeedBlock funding={funding} index={index + 1} />
           ))}
         </div>

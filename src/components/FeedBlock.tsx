@@ -2,6 +2,7 @@
 import { fundingState } from "@/store/atom";
 import Link from "next/link";
 import { useSetRecoilState } from "recoil";
+import { motion } from "framer-motion";
 
 export default function FeedBlock({ index, funding }: any) {
   const setFunding = useSetRecoilState(fundingState);
@@ -12,7 +13,10 @@ export default function FeedBlock({ index, funding }: any) {
       }}
       onClick={() => setFunding(funding)}
     >
-      <div className="flex border rounded-md border-container1 text-black">
+      <motion.div
+        whileHover={{ x: -5 }}
+        className="flex border rounded-md border-container1 text-black"
+      >
         <img
           src={funding?.image_urls[0].image_url}
           className="bg-gray-200 w-[100px] h-[70px]"
@@ -28,7 +32,7 @@ export default function FeedBlock({ index, funding }: any) {
           </div>
           <div className="text-main text-[40px] font-bold">{index}</div>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 }

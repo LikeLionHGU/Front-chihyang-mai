@@ -40,14 +40,19 @@ export default function FeedPage() {
               title="최근 피드"
               subTitle="최근 멤버들이 올린 피드를 보며 공감해요"
             />
-            <button className="bg-sub1 px-[15px] py-[8px] rounded-md text-white">
-              피드 추가하기
-            </button>
+            <Link href="/feed/add">
+              <button className="bg-sub1 px-[15px] py-[8px] rounded-md text-white">
+                피드 추가하기
+              </button>
+            </Link>
           </div>
           <div className="grid grid-cols-5 gap-[20px] mt-[20px]">
-            {feeds?.slice(0, 15).map((feed: any) => (
-              <Feed key={feed?.id} feed={feed} />
-            ))}
+            {feeds
+              ?.reverse()
+              ?.slice(0, 15)
+              .map((feed: any) => (
+                <Feed key={feed?.id} feed={feed} />
+              ))}
           </div>
           <div className="h-[100px]"> </div>
         </div>
