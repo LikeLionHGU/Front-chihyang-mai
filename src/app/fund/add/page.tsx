@@ -77,7 +77,7 @@ export default function FundAddPage() {
               />
             )}
           />
-          <Select control={control} />
+          <Asynchronous control={control} />
           <Influencer control={control} />
           <Content control={control} label={"펀딩 내용"} />
 

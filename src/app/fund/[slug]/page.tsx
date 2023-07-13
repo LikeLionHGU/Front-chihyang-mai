@@ -1,7 +1,8 @@
 "use client";
 import PersonInfo from "@/components/Fund/PersonInfo";
 import { FeedExamples, FundingExamples } from "@/components/data";
-// import { usePathname, useSearchParams,  } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+// import { useRouter } from "next/router";
 
 interface IProp {
   params: {
@@ -9,9 +10,18 @@ interface IProp {
   };
 }
 
-export default function DetailPage({ params }: IProp) {
-  const funding = FundingExamples[0];
-  //   const router = useRouter();
+export default function DetailPage({ params }: any) {
+  //   const funding = FundingExamples[0];
+
+  const searchParams = useSearchParams();
+  // Log the values
+  let funding: any = {};
+
+  // Loop over the searchParams
+  searchParams.forEach((value, key) => {
+    // Assign each key-value pair to the 'funding' object
+    funding[key] = value;
+  });
   //   const searchParams = useSearchParams();
   //   const pathname = usePathname();
   //   console.log(searchParams.getAll);

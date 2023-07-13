@@ -7,6 +7,7 @@ import FeedBlock from "@/components/FeedBlock";
 import Link from "next/link";
 import { getFeed } from "@/apis/feed";
 import { useEffect } from "react";
+import FeedModal from "@/components/Feed/FeedModal";
 
 export default function Home() {
   const feeds = FeedExamples;
@@ -41,7 +42,12 @@ export default function Home() {
             subTitle="가장 핫한 펀딩을 만나보세요!"
           />
           {fundings.slice(0, 5).map((funding, index) => (
-            <Link href={`/fund/${funding.id}`}>
+            <Link
+              href={{
+                pathname: `/fund/${funding.id}`,
+                query: funding,
+              }}
+            >
               <FeedBlock
                 title={funding.title}
                 request_num={funding.request_num}
@@ -56,7 +62,12 @@ export default function Home() {
             subTitle="내 취미에 맞는 펀딩 목록을 추천해줘요!"
           />
           {fundings.slice(0, 5).map((funding, index) => (
-            <Link href={`/fund/${funding.id}`}>
+            <Link
+              href={{
+                pathname: `/fund/${funding.id}`,
+                query: funding,
+              }}
+            >
               <FeedBlock
                 title={funding.title}
                 request_num={funding.request_num}
@@ -67,6 +78,8 @@ export default function Home() {
         </div>
       </div>
       <div></div>
+
+      <FeedModal />
     </div>
   );
 }

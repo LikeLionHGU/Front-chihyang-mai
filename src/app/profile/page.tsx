@@ -3,6 +3,7 @@ import Feed from "@/components/Feed";
 import { FeedExamples, FundingExamples } from "@/components/data";
 import FeedBlock from "@/components/FeedBlock";
 import Link from "next/link";
+import ProfileName from "@/components/Profile/ProfileName";
 
 export default function Profile() {
   const feeds = FeedExamples;
@@ -16,10 +17,7 @@ export default function Profile() {
           <div className="w-[150px] h-[150px] rounded-full flex justify-center items-center bg-gray-300 font-bold">
             프로필 사진
           </div>
-          <Title
-            title="사용자 이름"
-            subTitle="사용자의 부가설명, URL 등을 넣는 곳"
-          />
+          <ProfileName />
         </div>
         <div className="h-[100px]"></div>
         <Title
