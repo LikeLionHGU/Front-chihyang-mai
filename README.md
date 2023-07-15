@@ -1,21 +1,14 @@
 <h1>🦁 멋쟁이 사자처럼 11기 피서해커톤 2023 ( Team : 취향마이 )</h1>
 
 <br/>
-<p > [일시] 23. 7월 3일 ~ 7월 14일 </p>
-<p > [주제] 디깅모멘텀(Throught Enjoyment：Digging Momentum)
-
-  **“OO에 진심”인 사람이 늘고 있다
-한 분야를 깊게 파고드는 사람들이 늘어나면서 취미 생활을 넘어 나의 행복과 성장을 위해 좋아하는 것에 과몰입하는 행위와 방법**
-></p>
-
-<p > [목적]  기획, 디자인, 개발팀이 협업하여 아이디어를 웹서비스로 만들어 내는 역량 증진</p>
+<p> [일시] 23. 7월 3일 ~ 7월 14일 </p>
+<p> [주제] 디깅모멘텀(Throught Enjoyment：Digging Momentum) </p>
+<p> [목적]  기획, 디자인, 개발팀이 협업하여 아이디어를 웹서비스로 만들어 내는 역량 증진</p>
 
 <br/>
 <p>
-  <a href="https://www.swuniv.kr/56/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=15589127&t=board" target='_blank'>
-    <img src="https://img.shields.io/badge/🏝피서해커톤%20-%23F7DF1E.svg?&style=for-the-badge&&logoColor=white"/>
-    <img src="https://img.shields.io/badge/☀️하계방학 프로젝트%20-%23007396.svg?&style=for-the-badge&&logoColor=white"/>
-  </a>
+    <img src="https://img.shields.io/badge/🏝피서해커톤%20-%231572B6.svg?&style=for-the-badge&&logoColor=white"/>
+    <img src="https://img.shields.io/badge/☀️하계방학 프로젝트%20-%2359666C.svg?&style=for-the-badge&&logoColor=white"/>
 </p>
 
 <br/>
